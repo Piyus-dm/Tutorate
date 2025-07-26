@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorate | Tutor Rating Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="styles.css">
+        <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <!-- Header -->
+    <header id="header">
+        <div class="header-container">
+            <div id="logo-link" class="logo-container" role="button" aria-label="Go to Home">
+  <div class="logo-img">
+    <img src="Assests/images/my-logo.png" alt="TutoRate Logo" />
+  </div>
+  <div class="logo-text">Tuto<span>Rate</span></div>
+</div>
+
+
+            
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#tutors">Tutors</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Navigation -->
+            <div class="mobile-nav-overlay" id="mobile-nav-overlay">
+                <div class="mobile-nav-content">
+                    <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close navigation">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <ul class="mobile-nav-menu">
+                        <li><a href="#home" class="mobile-nav-link">Home</a></li>
+                        <li><a href="#tutors" class="mobile-nav-link">Tutors</a></li>
+                        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+ 
+            <div class="header-icons">
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Rate & Discover <span>Herald's</span> Best Tutors</h1>
+                <p>Rate your tutors & discover the ones who deliver real results and connect with top Herald tutors.</p>
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" class="search-input" id="search-input" placeholder="Search by subject, tutor name, or location..." aria-label="Search tutors" autocomplete="off">
+                    <button class="search-clear" id="search-clear" aria-label="Clear search" style="display: none;">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <!-- Search Dropdown -->
+                    <div class="search-dropdown" id="search-dropdown" style="display: none;">
+                        <div class="search-results" id="search-results">
+                            <!-- Search suggestions will appear here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Tutors Section -->
+    <section class="tutors-section" id="tutors">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">All Tutors</h2>
+                <div class="sort-container">
+                    <select class="sort-select" id="sort-select" aria-label="Sort tutors">
+                        <option value="relevance">Relevance</option>
+                        <option value="highest">Highest Rating</option>
+                        <option value="lowest">Lowest Rating</option>
+                        <option value="name-asc">Name (A-Z)</option>
+                        <option value="name-desc">Name (Z-A)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Tutors Grid -->
+            <div class="tutors-grid" id="tutors-grid">
+                <!-- Tutor cards will be dynamically inserted here -->
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination" id="pagination">
+                <!-- Pagination buttons will be inserted here -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="minimal-footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Brand Section -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="Assests/images/my-logo.png" alt="TutoRate Logo" />
+                        <span>Tuto<span class="accent">Rate</span></span>
+                    </div>
+                    <p class="footer-tagline">
+                        Connecting students with Herald College's top-rated tutors.
+                    </p>
+                </div>
+
+                <!-- Contact & Social -->
+                <div class="footer-info">
+                    <div class="contact-compact">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Herald College, Kathmandu</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@heraldcollege.edu.np">info@heraldcollege.edu.np</a>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/heraldcollegektm" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/hcknepal?t=RVzh4jqHUEa0l8UVVhQkjw&s=09" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/heraldcollegektm?igsh=a2tuZ3RzZGJ2czd1" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/school/herald-college-kathmandu/?trk=feed_main-feed-card_feed-actor-name" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 TutoRate. All rights reserved.</p>
+            </div>
+        </div>
+    <!-- Rating Modal -->
+    <div class="modal" id="rating-modal">
+        <div class="modal-content">
+            <button class="close-modal-floating" id="close-modal" aria-label="Close modal">&times;</button>
+            
+            <div class="modal-body">
+                <div id="modal-tutor-info">
+                    <!-- Tutor info will be inserted here -->
+                </div>
+                
+                <div class="rating-categories" id="rating-categories">
+                    <!-- Rating categories will be inserted here -->
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="submit-rating">Submit Rating</button>
+                <button class="btn btn-secondary" id="cancel-rating">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Email Input Modal -->
+    <div class="modal" id="email-modal">
+        <div class="modal-content">
+            <button class="close-modal-floating" id="close-email-modal" aria-label="Close modal">&times;</button>
+            
+            <div class="modal-body">
+                <div class="email-form">
+                    <h3 style="text-align: center; margin-bottom: var(--spacing-24); color: var(--accent-1);">Enter Your Email</h3>
+                    <p>Please enter your email address to submit your rating:</p>
+                    <div class="field">
+                        <input type="email" id="email-input" placeholder="your.email@example.com" required>
+                        <div class="error-message" id="email-error"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="confirm-email">Confirm</button>
+                <button class="btn btn-secondary" id="cancel-email">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="success-modal">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="success-content">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="success-title">Rating Submitted Successfully!</h3>
+                    <div class="success-message" id="success-message">
+                        <!-- Success message will be inserted here -->
+                    </div>
+                    <div class="success-rating" id="success-rating">
+                        <!-- Rating info will be inserted here -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="close-success-modal">Continue</button>
+            </div>
+        </div>
+    </div>
+    
+        <script src="app.js"></script>
+
+</body>
+</html>

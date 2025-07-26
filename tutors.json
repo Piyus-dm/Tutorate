@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "name": "Yogesh Shah",
+    "subject": "Programming",
+    "location": "Imadole, Kathmandu",
+    "rating": 0,
+    "reviews": 0,
+    "faculty": "MSC",
+    "image": "https://64.media.tumblr.com/a31c9b26a6fed107acee4d9ac12987da/86ff3acaa0e5ec94-10/s500x750/415042e4b9a68e5f46ac53b0912e05f76dcac5f1.pnj"
+  },
+  {
+    "id": 2,
+    "name": "Raj Pradhan",
+    "subject": "ISA",
+    "location": "Nardevi, Kathmandu",
+    "rating": 0,
+    "reviews": 0,
+    "faculty": "IMBA",
+    "image": "https://64.media.tumblr.com/9f1894ce343cd77eeeaa97961e57c7c6/86ff3acaa0e5ec94-7e/s500x750/a5794adfa803863f9473d1300c4abf389040c7ca.pnj"
+  },
+  {
+    "id": 3,
+    "name": "Ronit Shrestha",
+    "subject": "Artificial Intelligence",
+    "location": "Babarmahal, Kathmandu",
+    "rating": 0,
+    "reviews": 0,
+    "faculty": "Computing",
+    "image": "https://64.media.tumblr.com/cca2e4dd9b4e2e8369aecd1a7e925db9/86ff3acaa0e5ec94-55/s500x750/a434fc2b078b1a4358e97afb7340d77f5fa9de4a.pnj"
+  },
+  {
+    "id": 4,
+    "name": "Rahul Parajuli",
+    "subject": "Cybersecurity",
+    "location": "Chahbil, Kathmandu",
+    "rating": 0,
+    "reviews": 0,
+    "faculty": "Bsc. Computer Science",
+    "image": "https://64.media.tumblr.com/5ca12dee7778a3212204ea6ecc3f771c/86ff3acaa0e5ec94-6f/s500x750/c5560e3f0851f453b24b8b00f1524ab9ab87503f.pnj"
+  },
+  {
+    "id": 5,
+    "name": "Phurba Sherpa",
+    "subject": "Programming",
+    "location": "Boudha, Kathmandu",
+    "rating": 0,
+    "reviews": 0,
+    "faculty": "Bsc. Computer Science",
+    "image": "https://64.media.tumblr.com/7d94c2118a0cb0866e28954c8ddb69ce/86ff3acaa0e5ec94-5c/s500x750/d8714e884ce972b5bc5bc240738d5913c80b222a.pnj"
+  },
+  {
+    "id": 6,
+    "name": "Santosh Dhungana",
+    "subject": "Data Science",
+    "location": "Kathmandu, Nepal",
+    "rating": 0,
+    "reviews": 0,
+    "faculty": "MSC",
+    "image": "https://64.media.tumblr.com/5724cdec4b15960aa09a2878e7c2c760/86ff3acaa0e5ec94-a3/s500x750/814e1c410da9dc4374c6154585063a7437372e88.pnj"
+  },
+  {
+    "id": 7,
+    "name": "Biraj Dulal",
+    "subject": "Big Data",
+    "location": "Kathmandu, Nepal",
+    "rating": 0,
+    "reviews": 0,
+    "faculty": "Msc. Computer Science",
+    "image": "https://64.media.tumblr.com/475c46a0f5e3f9a0848db25da7bd883e/86ff3acaa0e5ec94-8a/s500x750/b033cda162083befa6ba4dae470f1f6492c6fdf8.pnj"
+  },
+  {
+    "id": 8,
+    "name": "Ishma Rai",
+    "subject": "Computational Mathematics",
+    "location": "Kathmandu, Nepal",
+    "rating": 0,
+    "reviews": 0,
+    "faculty": "Bsc. Computer Science",
+    "image": "https://64.media.tumblr.com/c746f7e8b03c737492ac52c6e1eb008c/86ff3acaa0e5ec94-a0/s500x750/94764789f92540a56926032ba5b04cd278f329fa.pnj"
+  },
+  {
+    "id": 9,
+    "name": "Alish Maharjan",
+    "subject": "Calculus",
+    "location": "Kathmandu, Nepal",
+    "rating": 0,
+    "reviews": 0,
+    "faculty": "Mathematics",
+    "image": "https://64.media.tumblr.com/23cd8a735c2ec331b475a8f5ab923af5/86ff3acaa0e5ec94-03/s500x750/1a44ad89d36b8b3c12e07b754e0218dee9b56497.pnj"
+  },
+  {
+    "id": 10,
+    "name": "Anish Maharjan",
+    "subject": "Server Management",
+    "location": "Samakhushi, Kathmandu",
+    "rating": 0,
+    "reviews": 0,
+    "faculty": "Bsc. Computer Science",
+    "image": "https://64.media.tumblr.com/d3353fd05578e1043e1c56aad9f733b2/86ff3acaa0e5ec94-03/s500x750/702e28c4837f2bff4fcd3d8614ce50262e245539.pnj"
+  },
+  {
+    "id": 11,
+    "name": "Bishal Khadka",
+    "subject": "Software Architecture",
+    "location": "Kathmandu, Nepal",
+    "rating": 0,
+    "reviews": 0,
+    "faculty": "Msc. Computer Science",
+    "image": "https://64.media.tumblr.com/b3d8904ebffed3eab869a2f06b5914ad/86ff3acaa0e5ec94-b4/s500x750/da9b20e2bddcbe64eb5ea2ae85cb319735d96109.pnj"
+  },
+  {
+    "id": 12,
+    "name": "Prabin Sapkota",
+    "subject": "IBM Cloud",
+    "location": "Kathmandu, Nepal",
+    "rating": 0,
+    "reviews": 0,
+    "faculty": "Cloud Computing",
+    "image": "https://64.media.tumblr.com/af5c2da62f40ce53cca60b5cbbc91fb7/86ff3acaa0e5ec94-9b/s500x750/2d65c0735ebe59c75649bdc0c8a2221ae1d05045.pnj"
+  },
+  {
+    "id": 13,
+    "name": "Sanjay Lama",
+    "subject": "Ethical Hacking",
+    "location": "Kathmandu, Nepal",
+    "rating": 0,
+    "reviews": 0,
+    "faculty": "Msc. Cybersecurity",
+    "image": "https://64.media.tumblr.com/68b91b66fbe9895d3704bfc6cff1b734/86ff3acaa0e5ec94-3f/s500x750/ad6eb156d178750cd6a95ad6cad8095ac495a78d.pnj"
+  },
+  {
+    "id": 14,
+    "name": "Khusbu Shrestha",
+    "subject": "Big Data",
+    "location": "Kathmandu, Nepal",
+    "rating": 0,
+    "reviews": 0,
+    "faculty": "Msc. Computer Science",
+    "image": "https://64.media.tumblr.com/dfad27f55020c0f98e9f446b6ef90f3a/86ff3acaa0e5ec94-2c/s500x750/12412b0d85de762148c3650167e516e510eea174.pnj"
+  },
+  {
+    "id": 15,
+    "name": "Jhonson Dhakal",
+    "subject": "Firewall Management",
+    "location": "Kathmandu, Nepal",
+    "rating": 0,
+    "reviews": 0,
+    "faculty": "Msc. Cybersecurity",
+    "image": "https://64.media.tumblr.com/daddaf545d8cc5cf06e4f626b4e17b0d/86ff3acaa0e5ec94-6d/s500x750/deb1f9f2d61314237448f79c407d8d4b0d4481dd.pnj"
+  },
+  {
+    "id": 16,
+    "name": "Prakriti Regmi",
+    "subject": "Cloud Systems",
+    "location": "Kathmandu, Nepal",
+    "rating": 0,
+    "reviews": 0,
+    "faculty": "IMBA",
+    "image": "https://64.media.tumblr.com/f9099748515a9b643f6d3342273ce4f5/86ff3acaa0e5ec94-46/s500x750/d13c149f52f15ba4b3049cd811d0ed1a15efd22e.pnj"
+  },
+  {
+    "id": 17,
+    "name": "Sarayu Gautam",
+    "subject": "Cloud Systems",
+    "location": "Kathmandu, Nepal",
+    "rating": 0,
+    "reviews": 0,
+    "faculty": "Computer Engineering",
+    "image": "https://64.media.tumblr.com/c4d7574a1900961455ee35552f53e212/86ff3acaa0e5ec94-d8/s500x750/e6108a3baa52a879c4359d70ef7125201089a76d.pnj"
+  },
+  {
+    "id": 18,
+    "name": "Subash Khatiwada",
+    "subject": "Software Architecture",
+    "location": "Kathmandu, Nepal",
+    "rating": 0,
+    "reviews": 0,
+    "faculty": "Computer Engineering",
+    "image": "https://64.media.tumblr.com/981276d9c6aa7ae528312943bec069ca/86ff3acaa0e5ec94-54/s500x750/aac532a7a6f876f25ee88876ea3970c16418eb2d.pnj"
+  }
+]
