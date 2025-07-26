@@ -11,7 +11,7 @@ app.use(cors({ origin: true }));
 app.use(bodyParser.json());
 
 // Serve static files (HTML, CSS, JS, images)
-// app.use(express.static('.')); // Remove this line
+app.use(express.static('.')); // Remove this line
 
 // Serve index.html at root
 // app.get('/', (req, res) => { // Remove this block
@@ -29,13 +29,13 @@ function writeJSON(path, data) {
 
 // GET all tutors
 app.get("/api/tutors", (req, res) => {
-  const tutors = readJSON(path.join(__dirname, "../tutors.json")); // Update path
+const tutors = readJSON(path.join(__dirname, "../public/tutors.json")); // Update path
   res.json(tutors);
 });
 
 // GET all ratings (optional)
 app.get("/api/ratings", (req, res) => {
-  const ratings = readJSON(path.join(__dirname, "../ratings.json")); // Update path
+const ratings = readJSON(path.join(__dirname, "../public/ratings.json")); // Update path
   res.json(ratings);
 });
 
@@ -50,7 +50,7 @@ app.post("/api/can-rate", (req, res) => {
   console.log("can-rate endpoint called with:", req.body);
   const { tutorId, deviceId } = req.body;
 
-  const ratingsPath = path.join(__dirname, "../ratings.json"); // Update path
+const ratingsPath = path.join(__dirname, "../public/ratings.json"); // Update path
   const ratings = readJSON(ratingsPath);
 
   // Check for 7-day cooldown period
@@ -83,7 +83,7 @@ app.post("/api/ratings", (req, res) => {
   const { tutorId, rating, reviewText, email, deviceId, deviceInfo } = req.body;
 
   const ratingsPath = path.join(__dirname, "../ratings.json"); // Update path
-  const tutorsPath = path.join(__dirname, "../tutors.json"); // Update path
+const tutorsPath = path.join(__dirname, "../public/tutors.json"); // Update path
 
   const ratings = readJSON(ratingsPath);
   const tutors = readJSON(tutorsPath);
