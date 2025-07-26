@@ -1,6 +1,6 @@
 // Global variables
         let tutors = [];
-const API_BASE_URL = '/api';
+const API_BASE_URL = process.env.API_BASE_URL || 'http://localhost:3000/api';
         
         // Device fingerprinting function
         function generateDeviceFingerprint() {
