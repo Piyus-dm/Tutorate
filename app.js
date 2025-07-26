@@ -1,6 +1,6 @@
 // Global variables
         let tutors = [];
-const API_BASE_URL = '/netlify/functions/api'; // Use Netlify function endpoint
+const API_BASE_URL = 'http://localhost:3000/api';
         
         // Device fingerprinting function
         function generateDeviceFingerprint() {
@@ -47,21 +47,21 @@ const API_BASE_URL = '/netlify/functions/api'; // Use Netlify function endpoint
         }
         
         // Fetch tutors from API
-async function fetchTutors() {
-    try {
-        const response = await fetch('/tutors.json');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+        async function fetchTutors() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/tutors`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                tutors = await response.json();
+                console.log('Tutors loaded:', tutors.length);
+            } catch (error) {
+                console.error('Error fetching tutors:', error);
+                // Fallback to empty array if API fails
+                tutors = [];
+                alert('Failed to load tutors. Please make sure the server is running on http://localhost:3000');
+            }
         }
-        tutors = await response.json();
-        console.log('Tutors loaded:', tutors.length);
-    } catch (error) {
-        console.error('Error fetching tutors:', error);
-        // Fallback to empty array if API fails
-        tutors = [];
-        alert('Failed to load tutors. Please make sure the server is running.');
-    }
-}
         
         // Rating categories
         const ratingCategories = [
@@ -978,84 +978,78 @@ async function fetchTutors() {
             // Success modal functionality
             closeSuccessModal.addEventListener('click', closeSuccessModalFunc);
             
-confirmEmail.addEventListener('click', async () => {
-    const email = emailInput.value.trim();
-
-    // Validate email
-    if (!email) {
-        showEmailError('Please enter your email address.');
-        return;
-    }
-
-    if (!isValidEmail(email)) {
-        showEmailError('Please enter a valid email address.');
-        return;
-    }
-
-    // Clear error and close email modal
-    clearEmailError();
-    closeEmailModalFunc();
-
-    // Calculate average rating
-    const values = Object.values(currentRatings);
-    const averageRating = (values.reduce((a, b) => a + b, 0) / values.length);
-
-    try {
-        // Generate device fingerprint
-        const deviceData = generateDeviceFingerprint();
-
-        // Create a new rating object
-        const newRating = {
-            tutorId: currentTutor.id,
-            rating: averageRating,
-            reviewText: `Communication: ${currentRatings.communication}/5, Experience: ${currentRatings.experience}/5, Clarity: ${currentRatings.clarity}/5, Punctuality: ${currentRatings.punctuality}/5, Satisfaction: ${currentRatings.satisfaction}/5`,
-            email: email,
-            deviceId: deviceData.deviceId,
-            deviceInfo: deviceData.deviceInfo,
-            timestamp: new Date().toISOString()
-        };
-
-        // Read existing ratings from ratings.json
-        const response = await fetch('/ratings.json');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        let ratings = await response.json();
-
-        // Add the new rating to the array
-        ratings.push(newRating);
-
-        // Write the updated ratings back to ratings.json
-        const writeResponse = await fetch('/ratings.json', {
-            method: 'PUT', // Or PATCH depending on your needs
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(ratings)
-        });
-
-         if (!writeResponse.ok) {
-            throw new Error(`HTTP error! status: ${writeResponse.status}`);
-        }
-
-        // Update local tutor data
-        await fetchTutors();
-        renderTutors();
-        setupPagination();
-
-        // Create confetti effect
-        createConfetti();
-
-        // Show success modal after a short delay
-        setTimeout(() => {
-            openSuccessModal(currentTutor.name, averageRating, false); // Assuming it's always a new rating
-        }, 500);
-
-    } catch (error) {
-        console.error('Error submitting rating:', error);
-        alert('Failed to submit rating. Please try again.');
-    }
-});
+            confirmEmail.addEventListener('click', async () => {
+                const email = emailInput.value.trim();
+                
+                // Validate email
+                if (!email) {
+                    showEmailError('Please enter your email address.');
+                    return;
+                }
+                
+                if (!isValidEmail(email)) {
+                    showEmailError('Please enter a valid email address.');
+                    return;
+                }
+                
+                // Clear error and close email modal
+                clearEmailError();
+                closeEmailModalFunc();
+                
+                // Calculate average rating
+                const values = Object.values(currentRatings);
+                const averageRating = (values.reduce((a, b) => a + b, 0) / values.length);
+                
+                try {
+                    // Generate device fingerprint
+                    const deviceData = generateDeviceFingerprint();
+                    
+                    // Submit rating to backend
+                    const response = await fetch(`${API_BASE_URL}/ratings`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            tutorId: currentTutor.id,
+                            rating: averageRating,
+                            reviewText: `Communication: ${currentRatings.communication}/5, Experience: ${currentRatings.experience}/5, Clarity: ${currentRatings.clarity}/5, Punctuality: ${currentRatings.punctuality}/5, Satisfaction: ${currentRatings.satisfaction}/5`,
+                            email: email,
+                            deviceId: deviceData.deviceId,
+                            deviceInfo: deviceData.deviceInfo
+                        })
+                    });
+                    
+                    if (!response.ok) {
+                        if (response.status === 429) {
+                            // Handle cooldown error
+                            const errorData = await response.json();
+                            showCooldownError(errorData.message, errorData.nextRatingDate);
+                            return;
+                        }
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    
+                    const result = await response.json();
+                    
+                    // Update local tutor data
+                    await fetchTutors();
+                    renderTutors();
+                    setupPagination();
+                    
+                    // Create confetti effect
+                    createConfetti();
+                    
+                    // Show success modal after a short delay
+                    setTimeout(() => {
+                        openSuccessModal(currentTutor.name, averageRating, result.updated);
+                    }, 500);
+                    
+                } catch (error) {
+                    console.error('Error submitting rating:', error);
+                    alert('Failed to submit rating. Please make sure the server is running and try again.');
+                }
+            });
             
             // Newsletter form submission
             const newsletterForm = document.getElementById('newsletter-form');
