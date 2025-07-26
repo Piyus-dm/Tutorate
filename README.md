@@ -1,2 +1,8 @@
 # Tutorate
-# Tutorate  A slick web platform for finding and booking tutors. Secure email/Google OAuth login, neon-glow UI with smooth scrolling and ripple effects, plus a JSON-backed 5-category rating system. Built with HTML/CSS/JS and Node.js/Express.
+# Tutorate  ## Main Objective
+
+Help students connect with qualified tutors, book sessions, and provide structured feedback in one simple web app.
+
+## Brief
+
+Tutorate lets users register, browse tutor profiles, schedule sessions, and rate tutors across multiple criteria. Built as an MVP with HTML, CSS, JavaScript, Node.js, Express, and JSON-based data storage.
