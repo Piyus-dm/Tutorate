@@ -63,13 +63,20 @@
                 <div class="search-container">
                     <i class="fas fa-search"></i>
                     <input type="text" class="search-input" id="search-input" placeholder="Search by subject, tutor name, or location..." aria-label="Search tutors" autocomplete="off">
-                    <button class="search-clear" id="search-clear" aria-label="Clear search" style="display: none;">
+                    <button class="search-clear" id="search-clear" aria-label="Clear search" style="display: none">
                         <i class="fas fa-times"></i>
                     </button>
                     <!-- Search Dropdown -->
-                    <div class="search-dropdown" id="search-dropdown" style="display: none;">
+                    <div class="search-dropdown" id="search-dropdown" style="display: none; z-index: 0;">
                         <div class="search-results" id="search-results">
-                            <!-- Search suggestions will appear here -->
+                          
+                          <!-- Search suggestions will appear here -->
+                        </div>
+                    <!-- Search Dropdown -->
+                    <div class="search-dropdown" id="search-dropdown" style="display: none; z-index: 0;">
+                        <div class="search-results" id="search-results">
+          
+                          <!-- Search suggestions will appear here -->
                         </div>
                     </div>
                 </div>
@@ -78,7 +85,7 @@
     </section>
     
     <!-- Tutors Section -->
-    <section class="tutors-section" id="tutors">
+    <section class="tutors-section" id="tutors" style="z-index: 1;">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">All Tutors</h2>

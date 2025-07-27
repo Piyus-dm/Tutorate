@@ -56,6 +56,7 @@ body {
   color: var(--primary);
   transition: var(--transition);
   overflow-x: hidden;
+  position: relative; /* Add this line */
 }
 
 h1,
@@ -410,8 +411,9 @@ nav a.active::after {
   align-items: center;
   justify-content: center;
   text-align: center;
-  position: relative;
-  overflow: hidden;
+  position: relative; /* Add this line */
+  z-index: 2; /* Add this line */
+  overflow: visible; /* Add this line */
   background: linear-gradient(
     135deg,
     rgba(26, 188, 156, 0.03) 0%,
@@ -469,7 +471,6 @@ header.shrink ~ main .hero {
 
 /* === TUTOR GRID === */
 .tutors-section {
-  position: relative;
   background: linear-gradient(
     to bottom,
     rgba(255, 193, 7, 0.03) 0%,
@@ -513,7 +514,7 @@ header.shrink ~ main .hero {
 }
 
 .search-container {
-  position: relative;
+  position: relative; /* Add this line */
   width: 100%;
   max-width: 650px;
   margin: 0 auto;
@@ -582,7 +583,7 @@ header.shrink ~ main .hero {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
   max-height: 320px;
   overflow-y: auto;
-  z-index: 1000;
+  z-index: 2000;
   animation: slideDown 0.2s ease;
   margin-top: 4px;
 }

@@ -310,9 +310,7 @@
 
             if (tutor) {
                 hideSearchDropdown();
-
-                // Open the rating modal for the selected tutor
-                openRatingModal(tutorId);
+                openRatingModal(tutor.id);
             }
         }
         
