@@ -1,6 +1,6 @@
 // Global variables
         let tutors = [];
-const API_BASE_URL = 'http://localhost:3000/api';
+        const API_BASE_URL = 'http://localhost:3000/api';
         
         // Device fingerprinting function
         function generateDeviceFingerprint() {
@@ -307,12 +307,10 @@ const API_BASE_URL = 'http://localhost:3000/api';
         function selectTutorFromSearch(tutorId) {
             selectedTutorId = tutorId;
             const tutor = tutors.find(t => t.id === tutorId);
-            
+
             if (tutor) {
-                searchInput.value = tutor.name;
                 hideSearchDropdown();
-                updateSearchClearButton();
-                
+
                 // Open the rating modal for the selected tutor
                 openRatingModal(tutorId);
             }
